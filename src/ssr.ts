@@ -1,10 +1,10 @@
-import * as puppeteer from "puppeteer";
+import puppeteer from "puppeteer";
 
-export default async function ssr(url: string) {
+export default async function ssr(url: string): Promise<String> {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-	await page.goto(url, { waitUntil: "networkidle0" });
-	// 序列化HTML页面的DOM元素
+  await page.goto(url, { waitUntil: "networkidle0" });
+  // 序列化HTML页面的DOM元素
   const html = await page.content();
   await browser.close();
   return html;

@@ -1,0 +1,9 @@
+.postItem {
+	padding: 1rem;
+	border: 1px solid black;
+}
+
+.head {
+	display: flex;
+	justify-content: flex-start;
+}
